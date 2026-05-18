@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio Studio</title>
+    <style>
+        :root {
+            --bg-color: #231F20;       /* Squarespace 특유의 짙은 브라운/블랙 */
+            --accent-color: #E6DFD3;   /* 부드러운 베이지/웜화이트 */
+            --text-light: #FFFFFF;
+            --text-muted: #A19B91;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-light);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            overflow: hidden;
+        }
+
+        /* 배경에 은은한 그라데이션 효과 효과 */
+        .bg-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at 50% 30%, #3a3331 0%, #231F20 70%);
+            z-index: 1;
+        }
+
+        .container {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+            max-width: 800px;
+            padding: 20px;
+        }
+
+        .subtitle {
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 4px;
+            color: var(--text-muted);
+            margin-bottom: 15px;
+        }
+
+        .title {
+            font-size: 3rem;
+            font-weight: 700;
+            line-height: 1.3;
+            margin-bottom: 20px;
+            color: var(--text-light);
+        }
+
+        .description {
+            font-size: 1.1rem;
+            color: var(--text-muted);
+            margin-bottom: 50px;
+            font-weight: 300;
+        }
+
+        /* 3개 버튼 메뉴 레이아웃 */
+        .menu-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .menu-btn {
+            background: transparent;
+            border: 1px solid rgba(230, 223, 211, 0.3);
+            padding: 30px 20px;
+            color: var(--accent-color);
+            text-decoration: none;
+            font-size: 1.2rem;
+            font-weight: 500;
+            border-radius: 4px;
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .menu-btn span {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* 호버 효과: Squarespace 느낌의 반전 및 확장 효과 */
+        .menu-btn:hover {
+            background-color: var(--accent-color);
+            color: var(--bg-color);
+            border-color: var(--accent-color);
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+        }
+
+        .menu-btn:hover span {
+            color: #5c554a;
+        }
+
+        /* 반응형 모바일 디자인 */
+        @media (max-width: 768px) {
+            .title { font-size: 2.2rem; }
+            .menu-grid { grid-template-columns: 1fr; gap: 15px; }
+            .menu-btn { padding: 20px; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="bg-overlay"></div>
+
+    <div class="container">
+        <p class="subtitle">Personal Showcase</p>
+        <h1 class="title">인상적인 프로젝트와<br>역량을 한눈에 확인하세요</h1>
+        <p class="description">준비된 전문성으로 가치를 만들어냅니다.</p>
+
+        <nav class="menu-grid">
+            <a href="resume.html" class="menu-btn">
+                <span>01 / History</span>
+                이력서 보기
+            </a>
+            <a href="port.html" class="menu-btn">
+                <span>02 / Showcase</span>
+                포트폴리오
+            </a>
+            <a href="ATC.html" class="menu-btn">
+                <span>03 / Lab</span>
+                ATC 페이지
+            </a>
+        </nav>
+    </div>
+
+</body>
+</html>
